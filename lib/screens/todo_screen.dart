@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_workshop/screens/add_todo_item_screen.dart';
 
 class ToDoListScreen extends StatefulWidget {
   static String id = 'todo_list_screen';
@@ -57,10 +58,22 @@ class _ToDoListScreenState extends State<ToDoListScreen> {
                     value: true,
                     onChanged: null,
                   ),
-                )
+                ),
+                Center(
+                  child: FloatingActionButton(
+                      onPressed: () {
+                        print('add button triggered');
+
+                        showModalBottomSheet(
+                            context: context,
+                            builder: (context) => AddTodoItemScreen());
+                      },
+                      child: Icon(Icons.add)),
+                ),
               ]),
         ),
       ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
     );
   }
 }
