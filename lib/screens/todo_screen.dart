@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_workshop/screens/add_todo_item_screen.dart';
+import 'package:flutter_workshop/components/add_todo_modal.dart';
 
 class ToDoListScreen extends StatefulWidget {
   static String id = 'todo_list_screen';
@@ -66,7 +66,7 @@ class _ToDoListScreenState extends State<ToDoListScreen> {
 
                         showModalBottomSheet(
                             context: context,
-                            builder: (context) => AddTodoItemScreen());
+                            builder: (context) => AddTodoModal());
                       },
                       child: Icon(Icons.add)),
                 ),

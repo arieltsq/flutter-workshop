@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-class AddTodoItemScreen extends StatelessWidget {
+class AddTodoModal extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     String newItemTitle;
@@ -8,7 +8,7 @@ class AddTodoItemScreen extends StatelessWidget {
         child: Container(
       padding: EdgeInsets.all(30.0),
       decoration: BoxDecoration(
-        color: Colors.yellow[100],
+        color: Colors.white,
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
