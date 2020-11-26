@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_workshop/components/add_todo_modal.dart';
+import 'package:flutter_workshop/models/item.dart';
+import 'package:flutter_workshop/widgets/item_list.dart';
 
 class ToDoListScreen extends StatefulWidget {
   static String id = 'todo_list_screen';
@@ -20,45 +22,9 @@ class _ToDoListScreenState extends State<ToDoListScreen> {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
                 Text('Items to do: 3',
-                    style: TextStyle(
-                      color: Colors.black,
-                      fontSize: 55.0,
-                    )),
-                Text('To do:',
-                    style: TextStyle(
-                      color: Colors.black,
-                      fontSize: 25.0,
-                    )),
-                ListTile(
-                  onLongPress: null,
-                  title: Text(
-                    'to buy eggs',
-                    style: TextStyle(
-                      color: Colors.black,
-                      fontSize: 20.0,
-                    ),
-                  ),
-                  trailing: Checkbox(
-                    activeColor: Colors.black,
-                    value: false,
-                    onChanged: null,
-                  ),
-                ),
-                ListTile(
-                  onLongPress: null,
-                  title: Text(
-                    'to buy milk',
-                    style: TextStyle(
-                      color: Colors.black,
-                      fontSize: 20.0,
-                    ),
-                  ),
-                  trailing: Checkbox(
-                    activeColor: Colors.black,
-                    value: true,
-                    onChanged: null,
-                  ),
-                ),
+                    style: Theme.of(context).textTheme.headline6),
+                Text('To do:', style: Theme.of(context).textTheme.subtitle1),
+                SizedBox(height: 200.0, child: ItemList()),
                 Center(
                   child: FloatingActionButton(
                       onPressed: () {
@@ -66,6 +32,7 @@ class _ToDoListScreenState extends State<ToDoListScreen> {
 
                         showModalBottomSheet(
                             context: context,
+                            isScrollControlled: true,
                             builder: (context) => AddTodoModal());
                       },
                       child: Icon(Icons.add)),

@@ -25,7 +25,7 @@ class InitialScreen extends StatelessWidget {
                   child: Center(
                     child: Text(
                       'Todo-App',
-                      style: TextStyle(color: Colors.black, fontSize: 20.0),
+                      style: Theme.of(context).textTheme.bodyText2,
                     ),
                   ),
                 ),
