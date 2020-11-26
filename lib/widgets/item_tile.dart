@@ -12,7 +12,10 @@ class ItemTile extends StatelessWidget {
     return ListTile(
       title: Text(
         text,
-        style: Theme.of(context).textTheme.bodyText2,
+        style: TextStyle(
+          fontSize: Theme.of(context).textTheme.bodyText2.fontSize,
+          decoration: isChecked ? TextDecoration.lineThrough : null,
+        ),
       ),
       trailing: Checkbox(
         activeColor: Colors.black,
