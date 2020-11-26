@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_workshop/models/item_data.dart';
+import 'package:provider/provider.dart';
 
 class AddTodoModal extends StatelessWidget {
   @override
@@ -29,6 +31,9 @@ class AddTodoModal extends StatelessWidget {
               FlatButton(
                 onPressed: () {
                   print('Todo new: $newItemTitle');
+                  // back to add provider to listen to item being add to the list | itemData
+                  Provider.of<ItemData>(context, listen: false)
+                      .addItem(newItemTitle);
                   Navigator.pop(context);
                 },
                 color: Colors.black,

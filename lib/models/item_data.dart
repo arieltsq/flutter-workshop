@@ -1,8 +1,9 @@
+import 'package:flutter/cupertino.dart';
 import 'item.dart';
 import 'dart:collection';
 
-class ItemData {
-  static List<Item> itemList = [
+class ItemData extends ChangeNotifier {
+  List<Item> itemList = [
     Item(name: 'Buy milk'),
     Item(name: 'Buy eggs'),
   ];
@@ -14,14 +15,16 @@ class ItemData {
   void addItem(String newItemName) {
     final item = Item(name: newItemName);
     itemList.add(item);
+    // after adding provider and all, remember to add listener to get updated on changes
+    notifyListeners();
   }
 
-  static void updateItem(Item item) {
-    print('triggered $item');
+  void updateItem(Item item) {
     item.toggleDone();
+    notifyListeners();
   }
 
-  static int get itemCount {
+  int get itemCount {
     return itemList.length;
   }
 }
