@@ -4,12 +4,18 @@ class ItemTile extends StatelessWidget {
   final String text;
   final bool isChecked;
   final Function checkboxCallback;
+  final Function longPressCallback;
 
-  ItemTile({this.text, this.isChecked, this.checkboxCallback});
+  ItemTile(
+      {this.text,
+      this.isChecked,
+      this.checkboxCallback,
+      this.longPressCallback});
 
   @override
   Widget build(BuildContext context) {
     return ListTile(
+      onLongPress: longPressCallback,
       title: Text(
         text,
         style: TextStyle(

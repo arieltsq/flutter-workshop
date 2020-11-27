@@ -27,4 +27,9 @@ class ItemData extends ChangeNotifier {
   int get itemCount {
     return itemList.length;
   }
+
+  void deleteItem(Item item) {
+    itemList.remove(item);
+    notifyListeners();
+  }
 }
