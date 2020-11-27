@@ -2,10 +2,15 @@ import 'package:flutter/material.dart';
 import 'package:flutter_workshop/models/item_data.dart';
 import 'package:provider/provider.dart';
 
-class AddTodoModal extends StatelessWidget {
+class AddTodoModal extends StatefulWidget {
+  @override
+  _AddTodoModalState createState() => _AddTodoModalState();
+}
+
+class _AddTodoModalState extends State<AddTodoModal> {
+  String newItemTitle;
   @override
   Widget build(BuildContext context) {
-    String newItemTitle;
     return Padding(
         padding: MediaQuery.of(context).viewInsets,
         child: Container(
