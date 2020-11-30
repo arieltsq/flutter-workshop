@@ -24,7 +24,7 @@ class _ToDoListScreenState extends State<ToDoListScreen> {
                 Text('Items to do: 3',
                     style: Theme.of(context).textTheme.headline6),
                 Text('To do:', style: Theme.of(context).textTheme.subtitle1),
-                SizedBox(height: 200.0, child: ItemList()),
+                Expanded(child: SizedBox(height: 200.0, child: ItemList())),
                 Center(
                   child: FloatingActionButton(
                       onPressed: () {
